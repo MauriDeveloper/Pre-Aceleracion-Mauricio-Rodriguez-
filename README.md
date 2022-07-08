@@ -1,2 +1,2 @@
-# Pre-Aceleracion-Mauricio-Rodriguez-
+# Pre-Aceleracion-Mauricio-Rodriguez
 Challenge Alkemy
