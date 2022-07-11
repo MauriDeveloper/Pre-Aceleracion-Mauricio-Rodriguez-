@@ -1,4 +1,4 @@
-package entity;
+package com.alkemy.challenge.entity;
 
 import java.util.ArrayList;
 import java.util.List;

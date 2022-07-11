@@ -1,4 +1,7 @@
-package entity;
+package com.alkemy.challenge.entity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,7 +34,7 @@ public class GeneroEntity {
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "pelicula_id", insertable = false, updatable = false)
-	private PeliculaEntity pelicula;
+	private List<PeliculaEntity> peliculas = new ArrayList<>();
 	
 	@Column(name = "pelicula_id", nullable = false)
 	private Long peliculaId;
@@ -40,14 +43,15 @@ public class GeneroEntity {
 		
 	}
 
-	public GeneroEntity(Long id, String nombre, String imagen, PeliculaEntity pelicula, Long peliculaId) {
+	public GeneroEntity(Long id, String nombre, String imagen, List<PeliculaEntity> peliculas, Long peliculaId) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.imagen = imagen;
-		this.pelicula = pelicula;
+		this.peliculas = peliculas;
 		this.peliculaId = peliculaId;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -73,12 +77,13 @@ public class GeneroEntity {
 		this.imagen = imagen;
 	}
 
-	public PeliculaEntity getPelicula() {
-		return pelicula;
+	
+	public List<PeliculaEntity> getPeliculas() {
+		return peliculas;
 	}
 
-	public void setPelicula(PeliculaEntity pelicula) {
-		this.pelicula = pelicula;
+	public void setPeliculas(List<PeliculaEntity> peliculas) {
+		this.peliculas = peliculas;
 	}
 
 	public Long getPeliculaId() {

@@ -1,4 +1,4 @@
-package entity;
+package com.alkemy.challenge.entity;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -49,7 +49,7 @@ public class PeliculaEntity {
 			)
 	@JoinTable(
 			name = "personaje_peli",
-			joinColumns = @JoinColumn(name = "peli_id"),
+			joinColumns = @JoinColumn(name = "pelicula_id"),
 			inverseJoinColumns = @JoinColumn(name = "personaje_id")
 			)
 	private Set<PersonajeEntity> personajes = new HashSet<>();
